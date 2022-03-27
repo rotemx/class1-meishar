@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent > div > div > div > div > .box {
+            color: red;
+        }
+
+        body {
+            font-size: 50px;
+        }
+
+        .box + * {
+            color: red;
+        }
+
+        section:hover {
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    this is a direct child
+</div>
+<section>
+    I am a section
+</section>
+<div>
+    I am first
+</div>
+<div>
+    I am second
+</div>
+<div>
+    I am third
+</div>
+<div>
+    I am fourth
+</div>
+</body>
+</html>

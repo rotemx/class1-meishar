@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script> // HTTPS - 443 : HTTP - 80
+    window.result = fetch('https://itunes.apple.com/search?term=eminem')
+        .then(response => {
+            response.json().then(data => {
+                console.log('data', data);
+                window.data = data;
+                // const albumNames = data.results.map(album => album.collectionName);
+
+                for (let albumName of albumNames) {
+                    document.writeln(`
+<div style="border: 1px solid #aaa;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background: #eee;
+        box-shadow: 5px 5px 5px #d3d3d369;
+        width: 330px;">
+    ${albumName}
+</div>`);
+                }
+
+                //DOM Manipulation
+                document.writeln(`Received ${data.resultCount} results.`)
+
+            })
+        });
+
+    </script>
+
+</head>
+<body>
+
+
+</body>
+<style>
+    .album {
+        border: 1px solid #aaa;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background: #eee;
+        box-shadow: 5px 5px 5px #d3d3d369;
+        width: 330px;
+    }
+</style>
+
+</html>
